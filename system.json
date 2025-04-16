@@ -86,6 +86,6 @@
     }
   ],
   "url": "https://github.com/anguskennedy/17thcmin",
-  "manifest": "https://github.com/anguskennedy/17thcmin/blob/main/system.json",
+  "manifest": "https://raw.githubusercontent.com/anguskennedy/17thcmin/main/system.json",
   "download": "https://github.com/"
 }
