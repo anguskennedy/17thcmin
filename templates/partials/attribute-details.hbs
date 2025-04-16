@@ -1,0 +1,87 @@
+<section class="bh2e-cs-attributes-section">
+    <div class="bh2e-cs-portrait">
+        <center>
+            <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="96" width="96"/>
+        </center>
+    </div>
+
+    <div class="bh2e-attribute-container">
+        <div class="bh2e-attribute-header-container">
+            <center>
+                <span class="bh2e-attribute-header">{{localize "bh2e.fields.labels.attributes.strength.short"}}</span>
+                <a class="bh2e-action-link" href="#" title="{{localize "bh2e.fields.titles.rollAttributeTest"}}">
+                    <i class="fas fa-dice-d20 bh2e-roll-attribute-test-icon" data-attribute="strength" data-id="{{actor.id}}" ></i>
+                </a>
+            </center>
+        </div>
+        <div class="bh2e-attribute-value-container">
+            <center>
+                <input type="number" name="system.attributes.strength" value="{{system.attributes.strength}}" />
+            </center>
+        </div>
+    </div>
+
+    <div class="bh2e-attribute-container">
+        <div class="bh2e-attribute-header-container">
+            <center>
+                <span class="bh2e-attribute-header">{{localize "bh2e.fields.labels.attributes.dexterity.short"}}</span>
+                <a class="bh2e-action-link" href="#" title="{{localize "bh2e.fields.titles.rollAttributeTest"}}">
+                    <i class="fas fa-dice-d20 bh2e-roll-attribute-test-icon" data-attribute="dexterity" data-id="{{actor.id}}" ></i>
+                </a>
+            </center>
+        </div>
+        <div class="bh2e-attribute-value-container">
+            <center>
+                <input type="number" name="system.attributes.dexterity" value="{{system.attributes.dexterity}}" />
+            </center>
+        </div>
+    </div>
+
+    <div class="bh2e-attribute-container">
+        <div class="bh2e-attribute-header-container">
+            <center>
+                <span class="bh2e-attribute-header">{{localize "bh2e.fields.labels.attributes.intelligence.short"}}</span>
+                <a class="bh2e-action-link" href="#" title="{{localize "bh2e.fields.titles.rollAttributeTest"}}">
+                    <i class="fas fa-dice-d20 bh2e-roll-attribute-test-icon" data-attribute="intelligence" data-id="{{actor.id}}" ></i>
+                </a>
+            </center>
+        </div>
+        <div class="bh2e-attribute-value-container">
+            <center>
+                <input type="number" name="system.attributes.intelligence" value="{{system.attributes.intelligence}}" />
+            </center>
+        </div>
+    </div>
+
+    <div class="bh2e-attribute-container">
+        <div class="bh2e-attribute-header-container">
+            <center>
+                <span class="bh2e-attribute-header">{{localize "bh2e.fields.labels.attributes.charisma.short"}}</span>
+                <a class="bh2e-action-link" href="#" title="{{localize "bh2e.fields.titles.rollAttributeTest"}}">
+                    <i class="fas fa-dice-d20 bh2e-roll-attribute-test-icon" data-attribute="charisma" data-id="{{actor.id}}" ></i>
+                </a>
+            </center>
+        </div>
+        <div class="bh2e-attribute-value-container">
+            <center>
+                <input type="number" name="system.attributes.charisma" value="{{system.attributes.charisma}}" />
+            </center>
+        </div>
+    </div>
+
+    <div class="bh2e-attribute-container">
+        <div class="bh2e-attribute-header-container">
+            <center>
+                <span class="bh2e-attribute-header">{{localize "bh2e.fields.labels.attributes.luck.short"}}</span>
+                <a class="bh2e-action-link" href="#" title="{{localize "bh2e.fields.titles.rollAttributeTest"}}">
+                    <i class="fas fa-dice-d20 bh2e-roll-attribute-test-icon" data-attribute="luck" data-id="{{actor.id}}" ></i>
+                </a>
+            </center>
+        </div>
+        <div class="bh2e-attribute-value-container">
+            <center>
+                <input type="number" name="system.attributes.luck" value="{{system.attributes.luck}}" />
+            </center>
+        </div>
+    </div>
+</section>

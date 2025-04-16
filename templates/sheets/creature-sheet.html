@@ -1,0 +1,46 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="bh2e-creature-sheet-body">
+        <section>
+            <img class="bh2e-actor-image" data-edit="img" src="{{actor.img}}" title="{{actor.name}}"/>
+            <hr><hr>
+
+            <div class="bh2e-field-row">
+                <label class="bh2e-label" for="system.hitDice">{{localize "bh2e.fields.labels.hitDice"}}</label>
+                <input type="number" name="system.hitDice" value="{{actor.system.hitDice}}" class="bh2e-input" />                
+            </div>
+
+            <div class="bh2e-field-row">
+                <label class="bh2e-label" for="system.hitPoints.value">{{localize "bh2e.fields.labels.hitPoints"}}</label>
+                <input type="number" name="system.hitPoints.value" value="{{actor.system.hitPoints.value}}" class="bh2e-input" />
+            </div>
+        </section>
+
+        <section>
+            <hr>
+            <input name="name" placeholder="{{localize 'bh2e.fields.placeholders.name'}}" type="text" value="{{actor.name}}"/>
+            <br><hr>
+
+            <div class="bh2e-grid-2-col bh2e-grid-wider-column-separation">
+                <section class="bh2-creature-actions">
+                    <h2>{{localize "bh2e.fields.labels.attacks"}}</h2>
+                {{#each actions as |action id|}}
+                    {{> "systems/17thcmin/templates/partials/creature-attack-entry.hbs" action}}
+                {{/each}}
+                </section>
+
+                <section class="bh2-creature-abilities">
+                    <h2>{{localize "bh2e.fields.labels.abilities"}}</h2>
+                {{#each abilities as |ability id|}}
+                    {{> "systems/17thcmin/templates/partials/creature-ability-entry.hbs" ability}}
+                {{/each}}
+                </section>
+            </div>
+            <br><hr>
+
+            <field class="bh2e-field">
+                <label for="system.notes" class="bh2e-label">{{localize "bh2e.fields.labels.notes"}}</label>
+                {{editor actor.system.notes target="system.notes" button=true owner=owner editable=editable}}
+            </field>            
+        </section>
+    </div>
+</form>

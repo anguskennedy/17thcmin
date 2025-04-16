@@ -1,0 +1,17 @@
+<section class="bh2e-creature-attack-container">
+    <div class="bh2e-creature-attack-header">
+        <div>
+            {{name}} - {{shortAttributeName system.attribute}} (<em>{{system.targetQuantity}} {{rangeName system.range}}</em>) {{system.damage}} Dmg
+        </div>
+
+        <span>
+            <a class="bh2e-action-link" href="#" title="{{localize "bh2e.fields.titles.deleteAttack"}}">
+                <i class="far fa-trash-alt bh2e-delete-item-icon" data-id="{{_id}}"></i>
+            </a>
+        </span>
+    </div>
+
+    <div class="bh2e-creature-attack-notes">
+        {{{system.notes}}}
+    </div>
+</section>

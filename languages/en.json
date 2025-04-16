@@ -1,0 +1,255 @@
+{
+  "bh2e": {
+    "buttons": {
+      "close": "Close",
+      "roll": "Roll"
+    },
+    "dialogs": {
+      "info": {
+        "empty": "No information available.",
+        "title": "Information"
+      },
+      "titles": {
+        "attackRoll": "Attack Roll"
+      }
+    },
+    "dice": {
+      "one": "1",
+      "d4": "1d4",
+      "d6": "1d6",
+      "d8": "1d8",
+      "d10": "1d10",
+      "d12": "1d12",
+      "d20": "1d20",
+      "special": "Other (Consult Abilities)"
+    },
+    "fields": {
+      "headers": {
+        "abilities": "Abilities",
+        "armour": "Armour",
+        "background": "Description",
+        "equipment": "Equipment",
+        "weapons": "Weapons"
+      },
+      "labels": {
+        "abilities": "Abilities",
+        "armedDamage": "Armed Damage",
+        "armourValue": "Armour Value",
+        "attacks": "Attacks",
+        "attribute": "Attribute",
+        "attributes": {
+          "charisma": {
+            "long": "Charisma",
+            "short": "CHA"
+          },
+          "default": {
+            "long": "Default",
+            "short": "Default"
+          },
+          "dexterity": {
+            "long": "Dexterity",
+            "short": "DEX"
+          },
+          "intelligence": {
+            "long": "Intelligence",
+            "short": "INT"
+          },
+          "strength": {
+            "long": "Strength",
+            "short": "STR"
+          },
+          "luck": {
+            "long": "Luck",
+            "short": "LUCK"
+          }
+        },
+        "baseUsageDie": "Usage Die",
+        "brokenDice": "Broken Dice",
+        "className": "Class",
+        "coinsValue": "Coins",
+        "currentUsageDie": "Current Die",
+        "damage": "Damage",
+        "description": "Description",
+        "dice": "Dice",
+        "exhausted": "Exhausted",
+        "hitDice": "Hit Dice",
+        "hitDie": "Hit Die",
+        "hitPoints": "Hit Points",
+        "hitPointsMax": "HP Maximum",
+        "hitPointsValue": "HP Current",
+        "key": "Key",
+        "largeWeapon": "Large Weapon?",
+        "level": "Level",
+        "magicAttribute": "Attribute",
+        "magicKind": "Type",
+        "magicLevel": "Level",
+        "name": "Name",
+        "none": "None",
+        "notApplicable": "-",
+        "notes": "Notes",
+        "playerName": "Player Name",
+        "quantity": "Quantity",
+        "range": "Range",
+        "rarity": "Rarity",
+        "size": "Size",
+        "tag": "Tag",
+        "targetQuantity": "Target Quantity",
+        "testAttribute": "Attribute",
+        "totalDice": "Total Dice",
+        "type": "Type",
+        "unarmedDamage": "Unarmed Damage",
+        "usageDie": "Usage Die",
+        "weapon": "Weapon",
+        "weaponKind": "Kind",
+        "weaponSize": "Size"
+      },
+      "placeholders": {
+        "name": "Enter a name"
+      },
+      "titles": {
+        "breakArmourDie": "Break Die",
+        "castPrayer": "Perform This Prayer",
+        "castPrayerAsRitual": "Perform This Prayer As A Ritual",
+        "castSpell": "Cast This Spell",
+        "castSpellAsRitual": "Cast This Spell As A Ritual",
+        "decreaseQuantity": "Decrease Quantity",
+        "deleteAbility": "Delete Ability",
+        "deleteArmour": "Delete Armour Item",
+        "deleteAttack": "Delete Attack",
+        "deleteEquipment": "Delete Item",
+        "deletePrayer": "Delete Prayer",
+        "deleteSpell": "Delete Spell",
+        "deleteWeapon": "Delete Weapon",
+        "increaseQuantity": "Increase Quantity",
+        "prayerAlreadyCast": "Prayer Has Been Performed At Least Once Already",
+        "preparePrayer": "Prepare This Prayer",
+        "prepareSpell": "Prepare This Spell",
+        "repairAllArmourDie": "Repair All Armour Items",
+        "repairArmourDie": "Repair A Single Die On This Item",
+        "resetAllUsageDice": "Reset All Usage Dice",
+        "resetUsageDie": "Reset Usage Die",
+        "rollAllBrokenArmourDice": "Roll Repair For All Broken Armour Dice",
+        "rollAttack": "Roll Attack",
+        "rollAttributeTest": "Roll Attribute Test",
+        "rollUsageDie": "Roll Usage Die",
+        "spellAlreadyCast": "Spell Has Been Cast At Least Once Already",
+        "unprepared": "Unprepared",
+        "unpreparePrayer": "Unprepare This Prayer",
+        "unprepareSpell": "Unprepare This Spell"
+      }
+    },
+    "initiative": {
+      "roll": "Rolling DEX test for initiative."
+    },
+    "magic": {
+      "kinds": {
+        "prayer": "Prayer",
+        "spell": "Spell"
+      }
+    },
+    "messages": {
+      "attributeTestFailed": "Test was a failure.",
+      "attributeTestSuccess": "Test was successful.",
+      "attacking": "%NAME% attacks with a %WEAPON%",
+      "attackMiss": "...but misses.",
+      "blurbs": {
+        "attacksWith": "Attacks With",
+        "casts": "Casts Spell",
+        "castsRitual": "Attempts To Cast As Ritual",
+        "damageInflicted": "Damage Caused",
+        "spellLost": "This spell is no longer prepared or available for use!",
+        "spellMiscast": "Spell is not cast and caster must roll on the Magical Side Effects table!",
+        "usageDie": "Rolling The Usage Die For",
+        "usageDieDowngrade": "Usage Die Has Been Downgrade To:",
+        "usageDieExhausted": "Usage Die Has Been Exhausted For:"
+      },
+      "criticalHit": "...and lands a critical hit. Rolling damage...",
+      "errors": {
+        "supplyDepleted": "Unable to reset the usage die for your %ITEM% as your supply is depleted.",
+        "usageDieExhausted": "The usage die for your %ITEM% is already exhausted."
+      },
+      "labels": {
+        "buttons": {
+          "rollDamage": "Roll Damage"
+        },
+        "critical": "Critical Hit!",
+        "failure": "Failed",
+        "hit": "Hit!",
+        "miss": "Missed",
+        "success": "Success"
+      },
+      "normalHit": "...and hits. Rolling damage...",
+      "reducingUsageDie": "Usage die reduced to %DIE%.",
+      "rollingAttributeTest": "Rolling a %ATTRIBUTE% attribute test for %NAME%...",
+      "rollingUsageDie": "Rolling the usage die for my %NAME%.",
+      "titles": {
+        "attackRoll": "Attack Roll",
+        "attributeTest": "Test: %ATTRIBUTE%",
+        "damageRoll": "Damage Roll",
+        "failure": "Failed",
+        "formula": "Roll",
+        "roll": "Result",
+        "success": "Success",
+        "test": "Test:",
+        "usageDie": "Usage Die"
+      },
+      "usageDieExhausted": "Usage die for your %NAME% exhausted."
+    },
+    "ranges": {
+      "close": "Close",
+      "nearby": "Nearby",
+      "faraway": "Faraway",
+      "distant": "Distant",
+      "special": "Special"
+    },
+    "rarities": {
+      "common": "Common",
+      "exotic": "Exotic",
+      "rare": "Rare"
+    },
+    "rolls": {
+      "advantage": "Advantage",
+      "disadvantage": "Disadvantage",
+      "modifier": "Roll Modifier:"
+    },
+    "settings": {
+      "options": {
+        "randomizeHP": {
+          "blurb": "Indicates whether creatures added to scenes will have their HP randomly generated.",
+          "title": "Randomize Creature HP"
+        }
+      }
+    },
+    "tabs": {
+      "labels": {
+        "background": "Background",
+        "basics": "Basics",
+        "prayers": "Prayers",
+        "spells": "Spells"
+      },
+      "titles": {
+        "level1": "Level 1",
+        "level2": "Level 2",
+        "level3": "Level 3",
+        "level4": "Level 4",
+        "level5": "Level 5",
+        "level6": "Level 6",
+        "level7": "Level 7",
+        "level8": "Level 8",
+        "level9": "Level 9",
+        "level10": "Level 10"
+      }
+    },
+    "weapons": {
+      "kinds": {
+        "melee": "Melee",
+        "ranged": "Ranged",
+        "unarmed": "Unarmed"
+      },
+      "sizes": {
+        "large": "Large",
+        "normal": "Normal"
+      }
+    }
+  }
+}

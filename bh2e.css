@@ -1,0 +1,543 @@
+.bh2e-ability-sheet-body {
+	display: grid;
+	grid-template-columns: 128px auto;
+	grid-gap: 5px 10px;
+}
+
+.bh2e-action-link {
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+.bh2e-alert-icon {
+	color: #a00;
+}
+
+.bh2e-armour-entry {
+	display: grid;
+	grid-template-columns: 45% 20% 20% 15%;
+	margin: 3px 0;
+}
+
+.bh2e-armour-headers {
+	display: grid;
+	font-weight: bold;
+	grid-template-columns: 45% 20% 20% 15%;
+	margin: 3px 0;
+}
+
+.bh2e-armour-section-header {
+	display: grid;
+	grid-template-columns: auto 90px;
+	margin: 3px 0;
+}
+
+.bh2e-armour-sheet-body {
+	display: grid;
+	grid-template-columns: 175px auto;
+	grid-gap: 5px 10px;
+}
+
+.bh2e-attack-roll-modifier-field {
+	display: grid;
+	grid-template-columns: auto 40px;
+	grid-gap: 0 5px;
+	line-height: 30px;
+	margin: 10px 0;
+	vertical-align: middle;
+}
+
+.bh2e-attribute-cell {
+	text-align: center;
+}
+
+.bh2e-attribute-container {
+	margin: 15px 0;
+}
+
+.bh2e-attribute-header {
+	font-size: 1.15;
+	font-weight: bold;
+}
+
+.bh2e-attribute-header-container {
+	background-color: #333;
+	color: #fff;
+	margin-bottom: 3px;
+	padding: 5px 0;
+}
+
+.bh2e-attribute-input {
+	text-align: center;
+}
+
+.bh2e-attribute-table {
+	font-size: 1.2em;
+}
+
+.bh2e-attribute-value-container input {
+	font-size: 1.3em;
+	height:  50px;
+	width: 60px;
+}
+
+.bh2e-character-details-section {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr;
+	grid-gap: 5px 15px;
+	margin-bottom: 15px;
+}
+
+.bh2e-checkbox-row {
+	display: grid;
+	grid-template-columns: 30px auto;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.bh2e-clear-both {
+	clear: both;
+}
+
+.bh2-creature-ability-action-column {
+	font-size: 1.2em;
+	float: right;
+	margin-right: 15px;
+}
+
+.bh2e-creature-ability-container {
+	margin: 5px 5px 10px 5px;
+}
+
+.bh2-creature-ability-detail-column {
+	margin-right: 0 5px;
+}
+
+.bh2e-creature-ability-entry {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.bh2-creature-ability-name {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.bh2-creature-ability-notes-container {
+	text-align: justify;
+}
+
+.bh2e-creature-attack-body {
+	display: grid;
+	grid-template-columns: 210px auto;
+	grid-gap: 5px 10px;
+}
+
+.bh2e-creature-attack-container {
+	margin: 0 5px;
+}
+
+.bh2e-creature-attack-header {
+	display: grid;
+	font-size: 1.2em;
+	font-weight: bold;
+	grid-template-columns: auto 25px;
+	grid-gap: 3px 0;
+}
+
+.bh2e-creature-attack-notes {
+	text-align: justify;
+}
+
+.bh2e-creature-attack-targets {
+	font-style: italic;
+	font-weight: normal;
+}
+
+.bh2-creature-header {
+	display: grid;
+	grid-template-columns: 96px auto;
+}
+
+.bh2e-creature-sheet-body {
+	display: grid;
+	grid-template-columns: 175px auto;
+	grid-gap: 5px 10px;
+}
+
+.bh2e-cs-attributes-section {
+	border: solid 1px #777;
+	padding: 5px;
+	width: 100px;
+}
+
+.bh2e-cs-container {
+	display: grid;
+	font-size: 1.1em;
+	grid-template-columns: 100px auto;
+	padding: 5px;
+}
+
+.bh2e-cs-main-body {
+	min-width: 600px;
+	padding: 5px;
+}
+
+.bh2e-damage-button-container {
+	margin-top: 5px;
+}
+
+.bh2e-damage-details {
+	color: #a00;
+	font-size: 120%;
+	text-align: center;
+}
+
+.bh2e-dialog-header {
+	border-bottom: solid 1px #555;
+	border-top: solid 1px #555;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.bh2e-editor-field {
+	display: block;
+	min-height: 200px;
+	width: 95%;
+}
+
+.bh2e-equipment-entry {
+	display: grid;
+	grid-template-columns: 35% 20% 20% 25%;
+	margin: 3px 0;
+}
+
+.bh2e-equipment-headers {
+	display: grid;
+	font-weight: bold;
+	grid-template-columns: 35% 20% 20% 25%;
+	margin: 3px 0;
+}
+
+.bh2e-equipment-section-header {
+	display: grid;
+	grid-template-columns: 90% 10%;
+	margin: 3px 0;
+}
+
+.bh2e-equipment-sheet-body {
+	display: grid;
+	grid-template-columns: 200px auto;
+	grid-gap: 5px 10px;
+}
+
+.bh2e-field {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.bh2e-field-row {
+	display: grid;
+	grid-template-columns: 3fr 1fr !important;
+	grid-gap: 5px;
+	line-height: 25px;
+	margin: 3px 10px;
+	vertical-align: middle;
+}
+
+.bh2e-field-row-balanced {
+	grid-template-columns: 1fr 1fr !important;
+}
+
+.bh2e-float-left {
+	float: left;
+}
+
+.bh2e-float-right {
+	float: right;
+}
+
+.bh2e-grid {
+	display: grid;
+}
+
+.bh2e-grid-2-col {
+	display:  grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5px;
+}
+
+.bh2e-grid-3-col {
+	display:  grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
+
+.bh2e-grid-4-col {
+	display:  grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 5px;
+}
+
+.bh2e-grid-5-col {
+	display:  grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 5px;
+}
+
+.bh2e-grid-wider-column-separation {
+	grid-gap: 5px 15px;
+}
+
+.bh2e-hidden {
+	display: none;
+}
+
+.bh2e-horizontal-field {
+	display: grid;
+	grid-gap: 5px;
+	margin: 2px 0;
+}
+
+.bh2e-horizontal-field-hp {
+	grid-template-columns: auto 45px 20px 45px;
+}
+
+.bh2e-horizontal-field-number {
+	grid-template-columns: auto 45px;
+}
+
+.bh2e-horizontal-field-number-wide {
+	grid-template-columns: auto 70px;
+}
+
+.bh2e-horizontal-field-select-narrow {
+	grid-template-columns: auto 70px;
+}
+
+.bh2e-horizontal-field-text {
+	grid-template-columns: auto 125px;
+}
+
+.bh2e-info-dialog-content {
+	border: groove 3px;
+	font-size: 1.1em;
+	margin: 5px 0;
+	max-height: 500px;
+	overflow: auto;
+	padding: 5px 10px;
+	text-align: justify;
+}
+.bh2e-info-element {
+	cursor: help;
+}
+
+.bh2e-label {
+	display: block;
+	font-weight: bold;
+	margin: 3px 0;
+}
+
+.bh2e-input {
+	margin: 3px 0 !important;
+}
+
+.bh2e-magic-level-title {
+	font-weight: bold;
+}
+
+.bh2e-magic-name {
+	color: #070;
+	font-weight: bold;
+}
+
+.bh2e-magic-name-unprepared {
+	color: #aaa;
+	font-weight: bold;
+}
+
+.bh2e-prayer-entry {
+	margin: 0 10px 20px 5px;
+}
+
+.bh2e-roll-column {
+	float: left;
+	padding: 5px 0;
+	margin: 0;
+	width: 50%;
+}
+
+.bh2e-roll-column-content {
+	font-size: 120%;
+	text-align: center;
+}
+
+.bh2e-roll-column-title {
+	font-size: 120%;
+	font-weight: bold;
+	margin: 3px 0;
+	text-align: center;
+}
+
+.bh2e-roll-failure {
+	background-color: #a00;
+	clear: both;
+	color: #fff;
+	margin-top: 5px;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.bh2e-roll-success {
+	background-color: #0a0;
+	clear: both;
+	color: #fff;
+	margin-top: 5px;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.bh2e-roll-title {
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.bh2e-see-through {
+	opacity: 0;
+}
+
+.bh2e-select {
+	width: 100%;
+}
+
+.bh2e-selected-tab .bh2e-tab-label {
+    color: #000;
+    font-weight: bold;
+}
+
+.bh2e-spell-entry {
+	margin: 0 10px 20px 5px;
+}
+
+.bh2e-spell-miscast {
+	color: #a00;
+	font-size: 110%;
+	text-align: center;
+}
+
+.bh2e-spell-unprepared {
+	color: #a00;
+	font-size: 110%;
+	text-align: center;
+}
+
+.bh2e-spell-sheet-body {
+	display: grid;
+	grid-template-columns: 215px auto;
+	grid-gap: 5px 10px;
+}
+
+.bh2e-tab {
+	border-left: solid 1px #aaa;
+	border-right: solid 1px #aaa;
+	border-top: solid 1px #aaa;
+	cursor: pointer;
+	float: left;
+	height: 35px;
+	padding: 5px 15px;
+	margin-right: 3px;
+}
+
+.bh2e-tabs-container {
+	border-bottom: solid 1px #aaa;
+	margin-bottom: 10px;
+	min-height: 35px;
+	padding-left: 5px;
+}
+
+.bh2e-tab-label {
+	color: #aaa;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.bh2e-text-bold {
+	font-weight: bold;
+}
+
+.bh2e-text-center {
+	text-align: center;
+}
+
+.bh2e-text-left {
+	text-align: left;
+}
+
+.bh2e-text-line {
+	line-height: 25px;
+	vertical-align: bottom;
+}
+
+.bh2e-text-right {
+	text-align: right;
+}
+
+.bh2e-text-input {
+}
+
+.bh2e-toggle-collapse-widget {
+	display: inline;
+}
+
+.bh2e-usage-die-fail {
+	color: #a00;
+	font-size: 110%;
+	text-align: center;	
+}
+
+.bh2e-weapon-entry {
+	display: grid;
+	grid-template-columns: 30% 20% 20% 15% 15%;
+	margin: 3px 0;
+}
+
+.bh2e-weapon-headers {
+	display: grid;
+	font-weight: bold;
+	grid-template-columns: 30% 20% 20% 15% 15%;
+	margin: 3px 0;
+}
+
+.bh2e-weapons-list-container {
+	transition: opacity 1s;
+}
+
+.bh2e-weapon-sheet-body {
+	display: grid;
+	grid-template-columns: 200px auto;
+	grid-gap: 5px 10px;
+}
+
+.editor {
+	height: 200px;
+}
+
+.editor-content {
+	height: 190px;
+	padding-right: 10px;
+}
+
+input,select {
+	background-color: #fff !important;
+}
+
+input[type=number] {
+	text-align: center;
+}

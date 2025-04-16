@@ -1,0 +1,85 @@
+{
+  "Actor": {
+    "types": ["character", "creature"],
+    "character": {
+      "attributes": {
+        "strength": 10,
+        "dexterity": 10,
+        "intelligence": 10,
+        "charisma": 10,
+        "luck": 10
+      },
+      "className": "Warrior",
+      "damageDice": {
+        "armed": "d6",
+        "unarmed": "d4"
+      },
+      "description": "",
+      "hitDie": "d6",
+      "hitPoints": { "max": 1, "value": 1 },
+      "level": 1,
+      "playerName": ""
+    },
+    "creature": {
+      "hitDice": 1,
+      "hitPoints": { "max": 5, "value": 5 },
+      "notes": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "ability",
+      "armour",
+      "creature-attack",
+      "equipment",
+      "magic",
+      "weapon"
+    ],
+    "templates": {
+      "itemBasics": {
+        "description": "",
+        "rarity": "common"
+      }
+    },
+    "ability": {
+      "description": "",
+      "tag": ""
+    },
+    "armour": {
+      "armourValue": {
+        "total": 1,
+        "broken": 0
+      },
+      "templates": ["itemBasics"]
+    },
+    "creature-attack": {
+      "attribute": "strength",
+      "damage": 1,
+      "notes": "",
+      "range": "close",
+      "targetQuantity": "1"
+    },
+    "equipment": {
+      "quantity": 1,
+      "templates": ["itemBasics"],
+      "usageDie": {
+        "current": "none",
+        "maximum": "none"
+      }
+    },
+    "magic": {
+      "attribute": "",
+      "cast": false,
+      "description": "",
+      "level": 1,
+      "kind": "spell",
+      "prepared": false
+    },
+    "weapon": {
+      "attribute": "strength",
+      "kind": "melee",
+      "size": "normal",
+      "templates": ["itemBasics"]
+    }
+  }
+}

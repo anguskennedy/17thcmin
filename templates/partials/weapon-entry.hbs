@@ -1,0 +1,25 @@
+<div class="bh2e-weapon-entry">
+    <div class="bh2e-info-element" data-description="{{description}}">{{name}}</div>
+    <div>
+        {{attackKind kind}}
+    </div>
+    <div>
+        {{longAttributeName attribute}}
+    </div>
+    <div>
+    {{#if (eq size "normal")}}
+        {{localize "bh2e.weapons.sizes.normal"}}
+    {{else}}
+        {{localize "bh2e.weapons.sizes.large"}}
+    {{/if}}
+    </div>
+
+    <div>
+        <a class="bh2e-action-link" href="#" title="{{localize 'bh2e.fields.titles.rollAttack'}}">
+            <i class="fas fa-dice-d20 bh2e-roll-attack-icon" data-attribute="{{attribute}}" data-actor="{{actorId}}" data-kind="{{kind}}" data-id="{{id}}" data-name="{{name}}" data-size="{{size}}"></i>
+        </a>
+        <a class="bh2e-action-link" href="#" title="{{localize 'bh2e.fields.titles.deleteWeapon'}}">
+            <i class="far fa-trash-alt bh2e-delete-item-icon" data-id="{{id}}"></i>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="bh2e-cs-container">
+        {{> "systems/17thcmin/templates/partials/attribute-details.hbs"}}
+
+        <section class="bh2e-cs-main-body">
+            <div class="bh2e-grid-2-col">
+                <field class="bh2e-field">
+                    <label class="bh2e-label" for="actor.name">{{localize "bh2e.fields.labels.name"}}</label>
+                    <input type="text" name="name" value="{{actor.name}}" />
+                </field>
+
+                <field class="bh2e-field">
+                    <label class="bh2e-label" for="system.playerName">{{localize "bh2e.fields.labels.playerName"}}</label>
+                    <input type="text" name="system.playerName" value="{{system.playerName}}" />
+                </field>
+            </div>
+
+            <div class="bh2e-character-details-section">
+                <div>
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-text">
+                        <label class="bh2e-label" for="system.className">{{localize "bh2e.fields.labels.className"}}</label>
+                        <input type="text" name="system.className" value="{{system.className}}" />
+                    </div>
+                    
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-number">
+                        <label class="bh2e-label" for="system.level">{{localize "bh2e.fields.labels.level"}}</label>
+                        <input style="text-align: center;" type="number" name="system.level" value="{{system.level}}" />
+                    </div>
+
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-select-narrow">
+                        <label for="system.hitDie" class="bh2e-label">{{localize "bh2e.fields.labels.hitDie"}}</label>
+                        <select name="system.hitDie" class="bh2e-select">
+                            {{selectOptions config.hitDieTypes localize=true selected=actor.system.hitDie}}
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-hp">
+                        <label class="bh2e-label">{{localize "bh2e.fields.labels.hitPoints"}}</label>
+                        <input style="text-align: center;" type="number" name="system.hitPoints.value" value="{{system.hitPoints.value}}" />
+                        <div class="bh2e-text-line"><center>/</center></div>
+                        <input style="text-align: center;" type="number" name="system.hitPoints.max" value="{{system.hitPoints.max}}" />
+                    </div>
+
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-select-narrow">
+                        <label for="system.damageDice.armed" class="bh2e-label">{{localize "bh2e.fields.labels.armedDamage"}}</label>
+                        <select name="system.damageDice.armed" class="bh2e-select">
+                            {{selectOptions config.damageDieTypes localize=true selected=actor.system.damageDice.armed}}
+                        </select>
+                    </div>
+    
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-select-narrow">
+                        <label for="system.damageDice.unarmed" class="bh2e-label">{{localize "bh2e.fields.labels.unarmedDamage"}}</label>
+                        <select name="system.damageDice.unarmed" class="bh2e-select">
+                            {{selectOptions config.damageDieTypes localize=true selected=actor.system.damageDice.unarmed}}
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bh2e-horizontal-field bh2e-horizontal-field-number-wide">
+                        <label class="bh2e-label" for="system.coins">{{localize "bh2e.fields.labels.coinsValue"}}</label>
+                        <input style="text-align: center;" type="number" name="system.coins" value="{{system.coins}}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="bh2e-tabs-container" data-default="bh2e-basics-tab" data-key="cs.tabs.selected">
+                <div class="bh2e-tab bh2e-selected-tab" data-default="true" data-tab="bh2e-basics-tab">
+                    <center class="bh2e-tab-label">{{localize "bh2e.tabs.labels.basics"}}</center>
+                </div>
+                <div class="bh2e-tab" data-tab="bh2e-spells-tab">
+                    <center class="bh2e-tab-label">{{localize "bh2e.tabs.labels.spells"}}</center>
+                </div>
+                <div class="bh2e-tab" data-tab="bh2e-prayers-tab">
+                    <center class="bh2e-tab-label">{{localize "bh2e.tabs.labels.prayers"}}</center>
+                </div>
+                <div class="bh2e-tab" data-tab="bh2e-background-tab">
+                    <center class="bh2e-tab-label">{{localize "bh2e.tabs.labels.background"}}</center>
+                </div>
+            </div>
+
+            {{> "systems/17thcmin/templates/partials/basics-tab.hbs"}}
+            {{> "systems/17thcmin/templates/partials/spells-tab.hbs"}}
+            {{> "systems/17thcmin/templates/partials/prayers-tab.hbs"}}
+            {{> "systems/17thcmin/templates/partials/background-tab.hbs"}}
+        </section>
+    </div>
+</form>
