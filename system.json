@@ -2,7 +2,7 @@
   "id": "17thcmin",
   "title": "17th Century Minimalist Hack",
   "description": "System support for 17th Century Minimalist, cloned from Black Hack 2e",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331"
