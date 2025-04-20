@@ -1,3 +1,24 @@
+
+/* File: systems/17thcmin/styles/bh2e.css */
+@font-face {
+	font-family: 'IM Fell DW Pica', serif;
+	src: url('.,/font/IMFellDWPica-Regular.ttf') format('truetype');
+  }
+
+.bh2e.window-app .window-content {
+  font-family: 'IM Fell DW Pica', serif;
+  background: #fdf3dc;
+  text-transform: none;
+}
+
+.bh2e-bcolor {
+	background-color: #fdf3dc;
+}
+
+.bh2e-redfont {
+	color: #9e4a2c;
+}
+
 .bh2e-ability-sheet-body {
 	display: grid;
 	grid-template-columns: 128px auto;

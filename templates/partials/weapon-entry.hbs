@@ -7,10 +7,12 @@
         {{longAttributeName attribute}}
     </div>
     <div>
-    {{#if (eq size "normal")}}
-        {{localize "bh2e.weapons.sizes.normal"}}
+    {{#if (eq size "small")}}
+        {{localize "bh2e.weapons.sizes.small"}}
+    {{else if (eq size "medium")}}
+        {{localize "bh2e.weapons.sizes.medium"}}
     {{else}}
-        {{localize "bh2e.weapons.sizes.large"}}
+        {{localize "bh2e.weapons.sizes.big"}}
     {{/if}}
     </div>
 

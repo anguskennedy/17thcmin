@@ -35,7 +35,7 @@ Hooks.once("init", function () {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("bh2e", BH2eCharacterSheet, {
     makeDefault: true,
-    types: ["character"],
+    types: ["character", "npc"],
   });
   Actors.registerSheet("bh2e", BH2eCreatureSheet, {
     makeDefault: true,

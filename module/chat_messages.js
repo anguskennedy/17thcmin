@@ -22,6 +22,24 @@ function isRollCritical(roll, options = {}) {
   return outcome;
 }
 
+function isRollFumble(roll, options = {}) {
+  let outcome = false;
+
+  if (options.advantage) {
+    outcome =
+      roll.terms[0].results[0].result === 20 ||
+      roll.terms[0].results[1].result === 20;
+  } else if (options.disadvantage) {
+    outcome =
+      roll.terms[0].results[0].result === 20 &&
+      roll.terms[0].results[1].result === 20;
+  } else {
+    outcome = roll.terms[0].results[0].result === 20;
+  }
+
+  return outcome;
+}
+
 export function logAttackRoll(actorId, weaponId, options = {}) {
   let actor = game.actors.find((a) => a.id === actorId);
 
@@ -32,6 +50,7 @@ export function logAttackRoll(actorId, weaponId, options = {}) {
       let roll = null;
       let extraDie = "";
       let critical = false;
+      let fumble = false;
       let data = {
         actor: actor.name,
         actorId: actorId,
@@ -39,10 +58,6 @@ export function logAttackRoll(actorId, weaponId, options = {}) {
         weaponId: weapon.id,
       };
       let settings = {};
-
-      if (weapon.system.size === "large") {
-        extraDie = "+1d4";
-      }
 
       if (options.advantage) {
         settings.kind = "advantage";
@@ -57,6 +72,7 @@ export function logAttackRoll(actorId, weaponId, options = {}) {
       roll = new Roll(`${generateDieRollFormula(settings)}${extraDie}`);
       roll.evaluate().then(() => {
         critical = isRollCritical(roll, options);
+        fumble = isRollFumble(roll, options);
         data.roll = {
           formula: roll.formula,
           labels: { title: interpolate("bh2e.messages.titles.attackRoll") },
@@ -67,25 +83,37 @@ export function logAttackRoll(actorId, weaponId, options = {}) {
         data.roll.success =
           actor.system.attributes[weapon.system.attribute] > data.roll.result;
 
-        if (!critical) {
+        if (critical) {
+          data.roll.labels.result = interpolate(
+            "bh2e.messages.labels.critical"
+          );
+        } else if (fumble) {
+          data.roll.labels.result = interpolate("bh2e.messages.labels.fumble");
+        } else {
           data.roll.labels.result = interpolate(
             data.roll.success
               ? "bh2e.messages.labels.hit"
               : "bh2e.messages.labels.miss"
-          );
-        } else {
-          data.roll.labels.result = interpolate(
-            "bh2e.messages.labels.critical"
           );
         }
 
         if (data.roll.success) {
           let damageDie = null;
 
-          if (weapon.system.kind != "unarmed") {
-            damageDie = actor.system.damageDice.armed;
-          } else {
+          if (weapon.system.kind === "unarmed") {
             damageDie = actor.system.damageDice.unarmed;
+          } else {
+            switch (weapon.system.size) {
+              case "small":
+                damageDie = "d4";
+                break;
+              case "big":
+                damageDie = "d8";
+                break;
+              default:
+                damageDie = "d6";
+                break;
+            }
           }
 
           if (damageDie !== "special") {
@@ -155,7 +183,8 @@ export function logAttributeTest(
         tested: true,
       };
 
-      data.roll.success = actor.system.attributes[attribute] > data.roll.result;
+      data.roll.success =
+        actor.system.attributes[attribute] >= data.roll.result;
       data.roll.labels.result = interpolate(
         data.roll.success
           ? "bh2e.messages.labels.success"
@@ -192,7 +221,7 @@ export function logDamageRoll(event) {
     let roll = null;
 
     if (rollData.critical === "true") {
-      formula = `(${formula})*2`;
+      formula = `(${formula})+1d4`;
     }
     data.roll.formula = formula;
 

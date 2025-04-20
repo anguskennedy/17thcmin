@@ -11,6 +11,7 @@ import { logDamageRoll } from "./module/chat_messages.js";
 import { toggleAttributeTestDisplay } from "./module/shared.js";
 
 import BH2eScene from "./module/bh2e_scene.js";
+import * as InitiativeBag from "./module/initiative.js";
 
 async function preloadHandlebarsTemplates() {
   const paths = [
@@ -94,6 +95,7 @@ Hooks.once("init", function () {
   console.log("Initializing the 17thcmin Black Hack 2e System.");
 
   game.bh2e = { BH2eActor, BH2eItem };
+  game.bh2e.initiative = InitiativeBag;
 
   CONFIG.BH2E = { configuration: BH2e, state: state };
   CONFIG.Actor.documentClass = BH2eActor;
@@ -118,7 +120,7 @@ Hooks.once("init", function () {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("bh2e", BH2eCharacterSheet, {
     makeDefault: true,
-    types: ["character"],
+    types: ["character", "npc"],
   });
   Actors.registerSheet("bh2e", BH2eCreatureSheet, {
     makeDefault: true,

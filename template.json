@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "creature"],
+    "types": ["character", "npc", "creature"],
     "character": {
       "attributes": {
         "strength": 10,
@@ -78,7 +78,7 @@
     "weapon": {
       "attribute": "strength",
       "kind": "melee",
-      "size": "normal",
+      "size": "medium",
       "templates": ["itemBasics"]
     }
   }

@@ -73,6 +73,7 @@ BH2e.weaponKinds = {
 };
 
 BH2e.weaponSizes = {
-  large: "bh2e.weapons.sizes.large",
-  normal: "bh2e.weapons.sizes.normal",
+  big: "bh2e.weapons.sizes.big",
+  medium: "bh2e.weapons.sizes.medium",
+  small: "bh2e.weapons.sizes.small",
 };

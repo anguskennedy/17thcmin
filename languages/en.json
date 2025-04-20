@@ -25,11 +25,11 @@
     },
     "fields": {
       "headers": {
-        "abilities": "Abilities",
-        "armour": "Armour",
+        "abilities": "ABILITIES",
+        "armour": "ARMOUR",
         "background": "Description",
-        "equipment": "Equipment",
-        "weapons": "Weapons"
+        "equipment": "EQUIPMENT",
+        "weapons": "WEAPONS"
       },
       "labels": {
         "abilities": "Abilities",
@@ -78,7 +78,7 @@
         "hitPointsMax": "HP Maximum",
         "hitPointsValue": "HP Current",
         "key": "Key",
-        "largeWeapon": "Large Weapon?",
+        "bigWeapon": "Big Weapon?",
         "level": "Level",
         "magicAttribute": "Attribute",
         "magicKind": "Type",
@@ -173,6 +173,7 @@
           "rollDamage": "Roll Damage"
         },
         "critical": "Critical Hit!",
+        "fumble": "Fumble!",
         "failure": "Failed",
         "hit": "Hit!",
         "miss": "Missed",
@@ -247,8 +248,9 @@
         "unarmed": "Unarmed"
       },
       "sizes": {
-        "large": "Large",
-        "normal": "Normal"
+        "big": "Big",
+        "medium": "Medium",
+        "small": "Small"
       }
     }
   }

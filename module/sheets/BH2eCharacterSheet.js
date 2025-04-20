@@ -55,6 +55,10 @@ export default class BH2eCharacterSheet extends ActorSheet {
 
     initializeCharacterSheetUI(window.bh2e.state);
 
+    html.find(".roll-attributes").click((ev) => {
+      ev.preventDefault();
+      this._rollAttributes();
+    });
     html
       .find(".bh2e-roll-attack-icon")
       .click(this._onRollAttackClicked.bind(this));
@@ -233,6 +237,81 @@ export default class BH2eCharacterSheet extends ActorSheet {
     context.weapons = weapons;
   }
 
+  async _rollAttributes() {
+    const actor = this.actor;
+    const attributes = [
+      "strength",
+      "dexterity",
+      "intelligence",
+      "charisma",
+      "luck",
+    ];
+
+    let updates = {};
+    let finalResults = {};
+    let summary = "<p><strong>Rolled Attributes:</strong></p><ul>";
+
+    async function rollAttribute(attr) {
+      let roll = new Roll("3d4");
+      await roll.roll({ async: true });
+      let result = roll.total;
+      let detail = `3d4 → ${result}`;
+
+      if (result < 6) {
+        const reroll = new Roll("1d4 + 12");
+        await reroll.roll({ async: true });
+        result = reroll.total;
+        detail += ` → rerolled with 1d4+12 → ${result}`;
+
+        // Optional chat message for the reroll only
+        reroll.toMessage({
+          speaker: ChatMessage.getSpeaker({ actor: actor }),
+          flavor: `Rerolled ${attr.toUpperCase()} (was < 6) with 1d4+12: ${result}`,
+        });
+      }
+
+      return { result, detail };
+    }
+
+    // First round of rolling
+    for (let attr of attributes) {
+      const { result, detail } = await rollAttribute(attr);
+      finalResults[attr] = result;
+      summary += `<li>${
+        attr.charAt(0).toUpperCase() + attr.slice(1)
+      }: ${detail}</li>`;
+    }
+
+    // If all attributes are <= 10, reroll everything once
+    if (Object.values(finalResults).every((val) => val <= 10)) {
+      ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: actor }),
+        content: "No attribute exceeded 10. Rerolling all attributes...",
+      });
+
+      summary = "<p><strong>Rerolled All Attributes:</strong></p><ul>";
+      for (let attr of attributes) {
+        const { result, detail } = await rollAttribute(attr);
+        finalResults[attr] = result;
+        summary += `<li>${
+          attr.charAt(0).toUpperCase() + attr.slice(1)
+        }: ${detail}</li>`;
+      }
+    }
+
+    summary += "</ul>";
+
+    ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
+      content: summary,
+    });
+
+    for (let attr of attributes) {
+      updates[`system.attributes.${attr}`] = finalResults[attr];
+    }
+
+    await actor.update(updates);
+  }
   _onBreakArmourDieClicked(event) {
     let element = event.currentTarget;
 
@@ -550,5 +629,45 @@ export default class BH2eCharacterSheet extends ActorSheet {
         );
       }
     }
+  }
+  _prepareNPCData(context) {
+    let abilities = [];
+    let armour = [];
+    let weapons = [];
+
+    context.items.forEach((item) => {
+      switch (item.type) {
+        case "ability":
+          abilities.push(item);
+          break;
+
+        case "armour":
+          armour.push(item);
+          break;
+
+        case "weapon":
+          weapons.push({
+            actorId: this.actor.id,
+            attribute: item.system.attribute,
+            description: item.system.description,
+            id: item._id,
+            kind: item.system.kind,
+            name: item.name,
+            rarity: item.system.rarity,
+            size: item.system.size,
+          });
+          break;
+
+        default:
+          console.warn("Ignoring NPC item", item);
+      }
+    });
+
+    abilities.sort((lhs, rhs) => lhs.name.localeCompare(rhs.name));
+
+    context.abilities = abilities;
+    context.armour = armour;
+    context.weapons = weapons;
+    context.config = CONFIG.BH2E.configuration;
   }
 }
