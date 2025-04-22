@@ -20,6 +20,16 @@
       "level": 1,
       "playerName": ""
     },
+    "npc": {
+      "attributes": {
+        "strength": 10,
+        "dexterity": 10,
+        "intelligence": 10,
+        "charisma": 10,
+        "luck": 10
+      },
+      "hitPoints": { "max": 1, "value": 1 }
+    },
     "creature": {
       "hitDice": 1,
       "hitPoints": { "max": 5, "value": 5 },

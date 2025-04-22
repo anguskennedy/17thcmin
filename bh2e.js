@@ -161,6 +161,27 @@ Hooks.once("init", function () {
   });
 });
 
-Hooks.once("ready", function () {
-  setTimeout(runMigrations, 500);
+Hooks.on("renderCombatTracker", (app, html, data) => {
+  const header = html.find(".combat-tracker-header");
+
+  // Remove old if re-rendered
+  html.find(".bh2e-init-buttons").remove();
+
+  // Create button group
+  const buttonGroup = $(`
+    <div class="bh2e-init-buttons" style="margin-top: 5px;">
+      <button type="button" class="bh2e-init-shuffle"><i class="fas fa-random"></i> Shuffle</button>
+      <button type="button" class="bh2e-init-draw"><i class="fas fa-dice"></i> Draw</button>
+    </div>
+  `);
+
+  buttonGroup.find(".bh2e-init-shuffle").click(() => {
+    game.bh2e.initiative.setupInitiativeBag();
+  });
+
+  buttonGroup.find(".bh2e-init-draw").click(() => {
+    game.bh2e.initiative.drawInitiativeToken();
+  });
+
+  header.after(buttonGroup);
 });

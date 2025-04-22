@@ -5,7 +5,17 @@ export function setupInitiativeBag() {
   const pcs = combat.combatants.filter((c) => c.actor?.type === "character");
   const adversaries = combat.combatants.filter((c) => c.actor?.type === "npc");
 
-  const bag = pcs.map((c) => c.actorId);
+  const bag = [];
+  for (const c of pcs) {
+    const actorClass = c.actor?.system?.className;
+    bag.push(c.actorId);
+    if (
+      typeof actorClass === "string" &&
+      actorClass.toLowerCase() === "illusionist"
+    ) {
+      bag.push(c.actorId); // Add a second token for Illusionist
+    }
+  }
   if (adversaries.length > 0) bag.push("adversaries");
   bag.push("neutral");
 
@@ -15,6 +25,21 @@ export function setupInitiativeBag() {
   combat.setFlag("17thcmin", "currentTurn", null);
 
   ui.notifications.info("Initiative bag shuffled.");
+
+  // Show count and breakdown of tokens in chat
+  const breakdown = bag
+    .map((id) => {
+      if (id === "neutral") return "🟡 Neutral";
+      if (id === "adversaries") return "🔴 Adversaries";
+      const actor = game.actors.get(id);
+      return actor ? `🟢 ${actor.name}` : "❓ Unknown";
+    })
+    .join("<br>");
+
+  ChatMessage.create({
+    content: `<strong>Initiative Bag (${bag.length} tokens):</strong><br>${breakdown}`,
+    whisper: ChatMessage.getWhisperRecipients("GM"), // Only whisper to GM
+  });
 }
 
 export async function drawInitiativeToken() {

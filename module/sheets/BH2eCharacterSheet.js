@@ -23,7 +23,7 @@ import {
 export default class BH2eCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["bh2e", "sheet", "character"],
+      classes: ["bh2e", "sheet", "character", "npc"],
       height: 825,
       template: "systems/17thcmin/templates/sheets/character-sheet.html",
       width: 800,
@@ -44,6 +44,10 @@ export default class BH2eCharacterSheet extends ActorSheet {
     context.flags = context.actor.flags;
 
     if (context.actor.type === "character") {
+      this._prepareCharacterData(context);
+    }
+
+    if (context.actor.type === "npc") {
       this._prepareCharacterData(context);
     }
 
