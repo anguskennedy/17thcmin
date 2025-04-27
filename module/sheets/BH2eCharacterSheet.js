@@ -667,7 +667,8 @@ export default class BH2eCharacterSheet extends ActorSheet {
       }
     });
 
-    abilities.sort((lhs, rhs) => lhs.name.localeCompare(rhs.name));
+    //abilities.sort((lhs, rhs) => lhs.name.localeCompare(rhs.name));
+    abilities.sort((lhs, rhs) => lhs.sort - rhs.sort);
 
     context.abilities = abilities;
     context.armour = armour;
