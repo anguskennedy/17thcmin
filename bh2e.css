@@ -562,3 +562,9 @@ input,select {
 input[type=number] {
 	text-align: center;
 }
+
+.bh2e-rest-buttons button {
+	width: 47%;
+	margin: 3px 0;
+	font-size: 14px;
+  }

@@ -84,6 +84,8 @@ export default class BH2eCharacterSheet extends ActorSheet {
     html
       .find(".bh2e-repair-all-armour-dice-icon")
       .click(this._onRepairAllArmourDiceClicked.bind(this));
+    html.find(".short-rest-button").click(this._onShortRest.bind(this));
+    html.find(".long-rest-button").click(this._onLongRest.bind(this));
     html
       .find(".bh2e-reset-all-usage-dice-icon")
       .click(this._onResetUsageDiceClicked.bind(this));
@@ -674,5 +676,47 @@ export default class BH2eCharacterSheet extends ActorSheet {
     context.armour = armour;
     context.weapons = weapons;
     context.config = CONFIG.BH2E.configuration;
+  }
+  async _onShortRest(event) {
+    event.preventDefault();
+    const actor = this.actor;
+
+    if (!actor) {
+      console.error("Short Rest failed: no actor found.");
+      return;
+    }
+
+    const level = actor.system.level ?? 1;
+    const hpGain = level;
+    const newHp = Math.min(
+      actor.system.hitPoints.max,
+      actor.system.hitPoints.value + hpGain
+    );
+
+    await actor.update({ "system.hitPoints.value": newHp });
+
+    ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
+      content: `${actor.name} takes a short rest and heals ${hpGain} HP.`,
+    });
+  }
+
+  async _onLongRest(event) {
+    event.preventDefault();
+    const actor = this.actor;
+
+    if (!actor) {
+      console.error("Long Rest failed: no actor found.");
+      return;
+    }
+
+    const maxHp = actor.system.hitPoints.max;
+
+    await actor.update({ "system.hitPoints.value": maxHp });
+
+    ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
+      content: `${actor.name} takes a long rest and fully restores HP to ${maxHp}.`,
+    });
   }
 }

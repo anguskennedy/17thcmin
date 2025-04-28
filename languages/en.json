@@ -77,6 +77,8 @@
         "hitPoints": "Hit Points",
         "hitPointsMax": "HP Maximum",
         "hitPointsValue": "HP Current",
+        "longRest": "Long Rest",
+        "shortRest": "Short Rest",
         "luck": "Luck",
         "luckMax": "Luck Maximum",
         "luckValue": "Luck Current",

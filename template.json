@@ -3,11 +3,11 @@
     "types": ["character", "npc", "creature"],
     "character": {
       "attributes": {
-        "strength": 10,
-        "dexterity": 10,
-        "intelligence": 10,
-        "charisma": 10,
-        "luck": 10
+        "strength": 8,
+        "dexterity": 8,
+        "intelligence": 8,
+        "charisma": 8,
+        "luck": { "max": 1, "value": 1 }
       },
       "className": "Warrior",
       "damageDice": {
@@ -22,11 +22,11 @@
     },
     "npc": {
       "attributes": {
-        "strength": 10,
-        "dexterity": 10,
-        "intelligence": 10,
-        "charisma": 10,
-        "luck": 10
+        "strength": 8,
+        "dexterity": 8,
+        "intelligence": 8,
+        "charisma": 8,
+        "luck": 8
       },
       "hitPoints": { "max": 1, "value": 1 }
     },
